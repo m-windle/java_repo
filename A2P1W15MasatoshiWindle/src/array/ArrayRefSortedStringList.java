@@ -7,6 +7,12 @@ package array;
 //----------------------------------------------------------------------------
 import lists.*;
 
+/******************************
+ * 	 Implemented Methods by   *
+ * 		@author Mr_Moshi	  *
+ *			100913032         *
+ ******************************/
+
 public class ArrayRefSortedStringList implements ListInterface<String>
 {
 	protected static final int NUL = -1;   // End of list symbol
@@ -130,20 +136,22 @@ public class ArrayRefSortedStringList implements ListInterface<String>
 		found = false;
 		if(numElements == 0) return; 
 		reset();
+		int hold = currentPos; 
 		String testString = getNext();
-		
-		while(nodes[currentPos].next != NUL && !testString.equals(element)){
-			previous = currentPos; 
+		int testCount = 0;
+
+		while(testCount != numElements){ 			
+			if(testString.compareToIgnoreCase(element) == 0){
+				found = true;
+				location = hold; 
+				return;
+			}
+
+			previous = hold;
+			hold = nodes[previous].next;
 			testString = getNext();
-		}
-		
-		if(testString.equals(element)){
-			found = true;
-			
-			if(currentPos == list) previous = NUL;
-			
-			location = currentPos; 
-		}
+			testCount++;
+		}		
 	}
 
 	@Override
@@ -166,15 +174,16 @@ public class ArrayRefSortedStringList implements ListInterface<String>
 	@Override
 	public String getNext() {
 		String output = nodes[currentPos].info;
-		
 		currentPos = (nodes[currentPos].next == NUL) ? list : nodes[currentPos].next;
-		
 		return output;
 	}
 	
 	public String toString(){
 		String output = "\n\tThe Students List: \n";
 		int currentIndex = list;
+		
+		if(list == NUL)
+			output += "\t\t~list is empty~\n";
 		
 		while(currentIndex != NUL){
 			if(nodes[currentIndex].info != null){

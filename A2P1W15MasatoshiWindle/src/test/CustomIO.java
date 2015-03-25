@@ -2,6 +2,11 @@ package test;
 import java.util.*;
 import java.util.Scanner;
 
+/******************************
+ * 		@author Mr_Moshi	  *
+ *			100913032         *
+ ******************************/
+
 public class CustomIO {
 	static Scanner input = new Scanner(System.in);
 	static boolean cont = true;
