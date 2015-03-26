@@ -19,6 +19,9 @@ public class LinkedStringBag implements UnboundedStringBag {
 		this.name = name;
 	}
 
+	/*
+	* Removes a random string from the UnboundedStringBag
+	*/ 
 	@Override
 	public String remove() throws EmptyBagException {		
 		if(!isEmpty()){
@@ -57,16 +60,25 @@ public class LinkedStringBag implements UnboundedStringBag {
 			throw new EmptyBagException("Bag is empty. Can't remove strings.");			
 	}
 
+	/*
+	* Returns the name of the BoundedStringBag
+	*/
 	@Override 
 	public String getName() {
 		return this.name;
 	}
 
+	/*
+	* Returns true if the BoundedStringBag does not contain any strings
+	*/ 
 	@Override 
 	public boolean isEmpty() {
 		return (this.linkedBag.getInfo() == null);
 	}
 
+	/*
+	* Inserts a String at the end of the BoundedStringBag list
+	*/
 	@Override 
 	public void insert(String s) {
 		LLNode<String> newNode = new LLNode<String>(s);
@@ -75,6 +87,9 @@ public class LinkedStringBag implements UnboundedStringBag {
 		this.length++;
 	}
 
+	/*
+	* Returns a string of the contents of the BoundedStringBag
+	*/
 	@Override 
 	public String toString() {
 		LLNode<String> strings = this.linkedBag;

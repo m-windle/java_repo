@@ -5,6 +5,9 @@ package exceptions;
  * 				100913032				*
  ***************************************/
 
+/*
+* Exception thrown when the bag is full
+*/
 public class FullBagException extends Exception{
 	public FullBagException() { }
 	public FullBagException(String msg) { super(msg); } 

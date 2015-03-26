@@ -21,6 +21,9 @@ public class TestStringBag {
 			unBoundedBag(input);		
 	}
 	
+	/*
+	* Returns the integer that the user selected
+	*/ 
 	public static int choice(Scanner input){
 		int choice = 0;
 		System.out.println("Chose the StringBag type (1=Bounded, 2=Unbounded)");

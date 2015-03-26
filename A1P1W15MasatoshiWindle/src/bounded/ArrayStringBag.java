@@ -16,7 +16,9 @@ public class ArrayStringBag implements BoundedStringBag {
 	private String[] boundBag = null;
 	private int size = 0;
 	private int nextIndex = 0;
-	
+	/*
+	*Constructor
+	*/
 	public ArrayStringBag(String name, int size) {
 		super();
 		this.size = size;
@@ -24,6 +26,10 @@ public class ArrayStringBag implements BoundedStringBag {
 		this.boundBag = new String[size];
 	}
 
+	/*
+	* Removes and returns a string from the 
+	* ArrayStringBag object
+	*/
 	@Override  
 	public String remove() throws EmptyBagException {
 		Random rand = new Random();
@@ -45,16 +51,25 @@ public class ArrayStringBag implements BoundedStringBag {
 			throw new EmptyBagException("The bag is empty. Can't remove strings.");
 	}
 
+	/*
+	* Returns the name of the ArrayStringBag
+	*/
 	@Override  
 	public String getName() {
 		return this.name;
 	}
 
+	/*
+	* Checks if the ArrayStringBag is empty
+	*/
 	@Override  
 	public boolean isEmpty() {
 		return (this.nextIndex <= 0);
 	}
 
+	/*
+	* Inserts a new string into the ArrayStringBag
+	*/
 	@Override  
 	public void insert(String s) throws FullBagException {
 		if(this.nextIndex != this.size){
@@ -65,6 +80,9 @@ public class ArrayStringBag implements BoundedStringBag {
 			throw new FullBagException("Bag is full. Could not add all strings.");
 	}
 
+	/*
+	* Returns the contents of the ArrayStringBag with formatting
+	*/
 	@Override  
 	public String toString() {
 		String values = ""; 

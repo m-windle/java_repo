@@ -35,6 +35,9 @@ public class TestReverse {
 				+ "a palindrome.");
 	}
 	
+	/* 
+	* Removes characters that are not letters of the alphabet
+	*/
 	public static String removeInvalid(String input){
 		input = input.toLowerCase();
 		String[] invalidChars = {"-", ".", "\'", ",", "?", "!", ":", ";", "\"", " "};

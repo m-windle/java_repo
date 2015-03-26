@@ -5,6 +5,9 @@ package recursive;
  * 				100913032				*
  ***************************************/
 
+/*
+* Recursively calls a string to test if it is a palindrome
+*/
 public class Recursive {	
 	public static boolean is_pali_rec(String input, int index, boolean is_not){		
 		if(index != (input.length() - 1) && is_not != false){

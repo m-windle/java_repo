@@ -6,6 +6,11 @@ package iterative;
  ***************************************/
 
 public class Iteration {	
+	/*
+	* Goes through the inputed string in an iterative fashion
+	* to determine if the String is a palindrome.
+	* Returns True if the String is a palindrome.
+	*/
 	public static boolean is_pali_it(String input){
 		String testString = "";		
 		LinkedStack<Character> testStack = new LinkedStack<Character>();
